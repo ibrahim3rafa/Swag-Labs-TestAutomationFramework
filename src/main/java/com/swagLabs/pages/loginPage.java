@@ -32,16 +32,19 @@ public class loginPage {
     //Actions
     //Methods -> wait -> scroll -> sendKeys ->
 
-    public void enterUsername(String user) {
+    public loginPage enterUsername(String user) {
         elementActions.sendData(driver, username, user);
+        return this;
     }
 
-    public void enterPassword(String pass) {
+    public loginPage enterPassword(String pass) {
         elementActions.sendData(driver, password, pass);
+        return this;
     }
 
-    public void clickLoginButton() {
+    public loginPage clickLoginButton() {
         elementActions.clickElement(driver, loginButton);
+        return this;
     }
 
 

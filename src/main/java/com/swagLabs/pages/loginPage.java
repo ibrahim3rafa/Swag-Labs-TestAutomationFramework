@@ -2,6 +2,7 @@ package com.swagLabs.pages;
 
 import com.swagLabs.utils.browserActions;
 import com.swagLabs.utils.elementActions;
+import com.swagLabs.utils.validations;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
@@ -53,7 +54,7 @@ public class loginPage {
         //Add validation for successful login
         //This can be done by checking the URL or checking for the presence of a specific element on the page
         //For example, checking if the URL contains "inventory.html"
-        Assert.assertEquals(browserActions.getCurrentUrl(driver), ("https://www.saucedemo.com/inventory.html"));
+        validations.validateEquals(browserActions.getCurrentUrl(driver), ("https://www.saucedemo.com/inventory.html"),"Login was not successful wrong URL");
     }
 
 
@@ -61,8 +62,6 @@ public class loginPage {
         //Add validation for unsuccessful login
         //This can be done by checking the URL or checking for the presence of a specific element on the page
         //For example, checking if the URL contains "inventory.html"
-        Assert.assertEquals(elementActions.getText(driver, errorMessage), "Epic sadface: Username and password do not match any user in this service");
+        validations.validateEquals(elementActions.getText(driver, errorMessage), "Epic sadface: Username and password do not match any user in this service","Login was successful but it should not be");
     }
-
-
 }

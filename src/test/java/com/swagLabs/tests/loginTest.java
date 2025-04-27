@@ -25,8 +25,8 @@ public class loginTest {
     }
 
 
-    //Configuration
 
+    //Configuration
     @BeforeTest
     public void setUp() {
         //Set up the test environment
@@ -35,7 +35,6 @@ public class loginTest {
         driver = new EdgeDriver(options);
         new loginPage(driver).navigateToLoginPage();
     }
-
 
     @AfterTest
     public void tearDown() {

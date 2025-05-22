@@ -20,17 +20,17 @@ public class validations {
 
     //validate equals
     public static void validateEquals(Object expected, Object actual ,String message) {
-        Assert.assertEquals(actual, expected, message);
+        Assert.assertEquals(actual, expected , message);
     }
 
     //validate not equals
-    public static void validateNotEquals(Object expected, Object actual ,String message) {
-        Assert.assertNotEquals(actual, expected, message);
+    public static void validateNotEquals(Object expected, Object actual) {
+        Assert.assertNotEquals(actual, expected);
     }
 
     //validate contains
-    public static void validateContains(String expected, String actual ,String message) {
-        Assert.assertTrue(actual.contains(expected), message);
+    public static void validateContains(String expected, String actual) {
+        Assert.assertTrue(actual.contains(expected));
     }
 
 

@@ -1,6 +1,7 @@
 package com.swagLabs.tests;
 
 import com.swagLabs.pages.loginPage;
+import com.swagLabs.utils.customSoftAssertions;
 import org.openqa.selenium.PageLoadStrategy;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.edge.EdgeDriver;
@@ -21,7 +22,7 @@ public class loginTest {
         new loginPage(driver).enterUsername("standard_user")
                 .enterPassword("secret_sauce")
                 .clickLoginButton()
-                .successfulLogin();
+                .softAssertSuccessfulLogin();
     }
 
 
@@ -40,6 +41,7 @@ public class loginTest {
     public void tearDown() {
         //Close the browser
         driver.quit();
+        customSoftAssertions.softAssertAll();
     }
 
 }
